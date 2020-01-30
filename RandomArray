@@ -1,0 +1,28 @@
+/*
+ Создать массив случайных чисел (размером 15 элементов). 
+ Создайте второй массив в два раза больше, первые 15 
+ элементов должны быть равны элементам первого массива, 
+ а остальные  элементы заполнить удвоенных значением начальных.
+ Например Было → {1,4,7,2} Стало → {1,4,7,2,2,8,14,4} 
+*/
+
+import java.math.*;
+import java.util.*;
+
+public class RandomArray {
+
+	public static void main(String[] args) {
+        int[] a = new int[15];
+        for(int i = 0 ; i < a.length ; i++) {
+        	a[i] = 0 + (int) (Math.random() * 10);
+        }
+        System.out.println(Arrays.toString(a));
+        int[] b = Arrays.copyOfRange(a, 0, a.length * 2);
+        for(int i = a.length ; i < b.length ; i++ ) {
+        	b[i] = a[i - a.length] * 2;
+        }
+        System.out.println(Arrays.toString(b));
+
+	}
+
+}
