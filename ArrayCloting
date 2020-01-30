@@ -1,0 +1,62 @@
+/* «Перевернуть массив». Т.е. написать программу которая повернет базовый
+ массив на 90,180,270 градусов по часовой стрелке.
+ (При выполнении задания использовать дополнительный массив нельзя). */
+ 
+ import java.util.*;
+
+public class ArrayCloting {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int[][] a = new int[6][6];
+		int num = 0;
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				a[i][j] = j + 1;
+
+			}
+		}
+		for (int q = 0; q < a.length; q++) {
+			System.out.println(Arrays.toString(a[q]));
+		}
+		System.out.println("На сколько градусов повернуть массив?" + "(Можно указать 90, 180 и 270 градусов)");
+		int g = scanner.nextInt();
+		if (g == 90 || g == 180 || g == 270) {
+			if (g == 90) {
+				for (int q = 0; q < a.length; q++) {
+					for (int p = 0; p < a.length; p++) {
+						a[q][p] = a[q][q];
+					}
+				}
+				for (int q = 0; q < a.length; q++) {
+					System.out.println(Arrays.toString(a[q]));
+				}
+			}
+			for (int i = 0; i < a.length; i++) {
+				for (int j = 0; j < a.length; j++) {
+					a[j][i] = a.length - i;
+				}
+			}
+			if (g == 180) {
+				for (int q = 0; q < a.length; q++) {
+					System.out.println(Arrays.toString(a[q]));
+				}
+			}
+			for (int i = 0; i < a.length; i++) {
+				for (int j = 0; j < a.length; j++) {
+					a[i][j] = a.length - i;
+				}
+			}
+			if (g == 270) {
+				for (int q = 0; q < a.length; q++) {
+					System.out.println(Arrays.toString(a[q]));
+				}
+			}
+		}else 
+			System.out.println("Значение не соответствует условиям");
+	}
+
+}
+
+ 
+ 
