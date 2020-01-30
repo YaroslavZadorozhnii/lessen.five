@@ -1,0 +1,24 @@
+/*
+ Написать код для возможности создания массива целых чисел 
+ (размер вводиться с клавиатуры) и возможности заполнения 
+ каждого его элемента вручную. Выведите этот массив на экран.
+ */
+ 
+import java.util.*;
+import java.math.*;
+public class UpArray {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Укажите необходимый размер массива");
+		int[] a = new int[Math.abs(scanner.nextInt())];;
+		for(int i = 0 ; i < a.length ; i++) {
+			System.out.println("Заполните числом " + (i+1) + "-й слот массива");
+			a[i] = scanner.nextInt();
+		}
+		System.out.println(Arrays.toString(a));
+		
+
+	}
+
+}
